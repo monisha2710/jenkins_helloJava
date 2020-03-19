@@ -1,15 +1,18 @@
 pipeline{
 	agent any
+	environment{
+		PATH = "C:\\WINDOWS\\SYSTEM32"
+	}
 	stages{
 		stage("Compile"){
 			steps{
-				javac HelloWorld.java
+				bat 'javac HelloWorld.java'
 			}
 		}
 		
 		stage("Run"){
 			steps{
-				java HelloWorld
+				bat 'java HelloWorld'
 			}
 		}
 	}
